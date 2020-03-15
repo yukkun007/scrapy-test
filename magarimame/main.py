@@ -129,7 +129,8 @@ def all():
 
 def main():
     # 地図生成
-    save_map_by_info_query("ステーキ")
+    # save_map_by_info_query("ステーキ")
+    save_map()
 
 
 if __name__ == "__main__":
