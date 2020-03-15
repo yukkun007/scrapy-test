@@ -1,0 +1,34 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[packages]
+scrapy = "==2.0.0"
+requests = "==2.23.0"
+tqdm = "==4.43.0"
+beautifulsoup4 = "==4.8.2"
+folium = "==0.10.1"
+pandas = "==1.0.1"
+
+[dev-packages]
+flake8 = "==3.7.9"
+mypy = "==0.761"
+pytest = "==5.3.5"
+black = "==19.10b0"
+pytest-cov = "==2.8.1"
+coverage = "==5.0.3"
+sphinx = "*"
+
+[requires]
+python_version = "3.7"
+
+[scripts]
+v = "python --version"
+ut = "py.test -v --capture=no --cov-config .coveragerc --cov=magarimame --cov-report=xml --cov-report term-missing ."
+utsp = "py.test -v --capture=no --cov-config .coveragerc --cov=magarimame --cov-report=xml --cov-report term-missing -k TestMain ."
+ut_fast = "py.test -v --capture=no --cov-config .coveragerc --cov=magarimame --cov-report=xml --cov-report term-missing --duration=20 -m 'not slow' ."
+lint = "flake8 --max-line-length=100 --ignore=E203,W503 mmlibrary"
+scrapy = "scrapy crawl restaurant_spider"
+scrapy_out = "scrapy crawl restaurant_spider -o out.csv"
+start = "python -m magarimame.main"
